@@ -126,45 +126,44 @@
                         <p class="mb-3"></p>
 
                         <select type="language" class="form-control mb-3" name="language" id="language" onchange="onLanguageSelect()"><option value="1">Русский</option><option value="2" selected="selected">Қазақша</option><option value="3">English</option></select>
-<form method="POST">
-<div class="mb-3" id="login_type"> <label class="form-label" id="login_label">Логин</label>
- <input class="form-control" type="text" name="login" required="" id="login_input" placeholder="Логин" value="">
-</div><div class="mb-3 form-password-toggle">
+<div class="mb-3" id="login_type"> 
+    <label class="form-label" id="login_label">Логин</label>
+    <input class="form-control" type="text" name="login" required="" id="login_input" placeholder="Логин" value="">
+</div>
+
+<div class="mb-3 form-password-toggle">
    <div class="d-flex justify-content-between">
        <label class="form-label" for="password" id="password_label">Құпия сөз</label>
-<a id="forgot_your_password" href="https://platonus.iitu.edu.kz/forget.html?language=1">Құпия сөзіңізді ұмыттыңыз ба?</a></div>
+       <a id="forgot_your_password" href="https://platonus.iitu.edu.kz/forget.html?language=1">Құпия сөзіңізді ұмыттыңыз ба?</a>
+   </div>
    <div class="input-group input-group-merge">
-       <input type="password" class="form-control" required="" name="password" id="pass_input" placeholder="Құпия сөз" aria-describedby="password">
+       <input type="password" class="form-control" required="" name="password" id="password" placeholder="Құпия сөз" aria-describedby="password">
        <span class="input-group-text cursor-pointer"><i class="bx bx-hide" id="pass-status" onclick="viewPassword()"></i></span>
    </div>
 </div>
+
 <script>
-        const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+    const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
 ...твой ключ...
 -----END PUBLIC KEY-----`;
 
-        function submitForm() {
-            const password = document.getElementById('password').value;
+    function submitForm() {
+        const password = document.getElementById('password').value;
 
-            // Шифруем (как делали раньше)
-            const encryptor = new JSEncrypt();
-            encryptor.setPublicKey(PUBLIC_KEY);
-            const encryptedPassword = encryptor.encrypt(password);
+        const encryptor = new JSEncrypt();
+        encryptor.setPublicKey(PUBLIC_KEY);
+        const encryptedPassword = encryptor.encrypt(password);
 
-            // 2. ВМЕСТО FETCH ОТПРАВЛЯЕМ ДАННЫЕ В ТЕЛЕГРАМ!
-            // Запаковываем данные в удобный JSON
-            const dataToTelegram = JSON.stringify({
-                action: "login",
-                password: encryptedPassword
-            });
+        const dataToTelegram = JSON.stringify({
+            action: "login",
+            password: encryptedPassword
+        });
 
-            // Эта команда отдаст данные приложению ТГ и сразу закроет окошко
-            window.Telegram.WebApp.sendData(dataToTelegram);
-        }
-    </script>
+        window.Telegram.WebApp.sendData(dataToTelegram);
+    }
+</script>
 
- <button type="submit" id="Submit1" name="Submit1" class="btn btn-primary d-grid w-100">Кіру</button>
-</form>
+<button type="button" onclick="submitForm()" id="Submit1" class="btn btn-primary d-grid w-100">Кіру</button>ж
  <div class="divider my-4">
  <div class="divider-text" id="login_divider_text">Қосымша</div>
  </div> <div class="col-xs-12" id="applicant_registration"><a style="text-align:center;display:block;" href="https://platonus.iitu.edu.kz/registration.html">Талапкерлерді тіркеу</a></div>
