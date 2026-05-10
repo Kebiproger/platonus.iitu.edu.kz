@@ -13,7 +13,7 @@ function onSubmit() {
         if (!loginRadioChecked && document.getElementById('iin_input') && document.getElementById("iin_input").value.length == 0) {
             return false;
         }
-        if (document.getElementById("pass_input").value.length == 0) {
+        if (document.getElementById("password").value.length == 0) {
             return false;
         }
     }
@@ -134,7 +134,7 @@ function loginWithoutEds() {
         login: isFieldExist("login_input") ? document.getElementById("login_input").value : null,
         iin: isFieldExist("iin_input") ? document.getElementById("iin_input").value : null,
         icNumber: isFieldExist("iin_input") ? document.getElementById("iin_input").value : isFieldExist("icNumber") ? document.getElementById("icNumber").value : null,
-        password: document.getElementById("pass_input").value,
+        password: document.getElementById("password").value,
         authForDeductedStudentsAndGraduates: localStorage.authForDeductedStudentsAndGraduates
     });
 
@@ -181,10 +181,10 @@ function doOnLoad() {
     if (!isAdminPage) {
         language = localStorage.getItem("language");
         const pltLang = localStorage.getItem('pltLang');
-        language = +pltLang;
+        language = +pltLang || 1;
 
 
-        if (!language) {
+        if (!pltLang) {
             $.ajax({
                 url: 'rest/api/default_auth_language',
                 contentType: 'application/json; charset=UTF-8',
@@ -572,7 +572,7 @@ function chooseCertificate() {
 }
 
 function viewPassword() {
-    var passwordInput = document.getElementById('pass_input');
+    var passwordInput = document.getElementById('password');
     var passStatus = document.getElementById('pass-status');
 
     if (passwordInput.type === 'password'){

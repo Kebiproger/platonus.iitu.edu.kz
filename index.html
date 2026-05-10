@@ -97,10 +97,10 @@
         <!-- /Left Text -->
         <div class="d-none d-xl-flex flex-shrink-1 align-items-center p-5 authentication-bg">
             <div class="fixed-top">
-                <img src="Platonus_files/loginlogo.png" class="ms-5 mt-4" alt="Login logo" data-app-dark-img="/images/loginlogo.png" data-app-light-img="/images/loginlogo.png">
+                <img src="Platonus_files/loginlogo.png" class="ms-5 mt-4" alt="Login logo" data-app-dark-img="Platonus_files/loginlogo.png" data-app-light-img="Platonus_files/loginlogo.png">
             </div>
             <div class="w-100 d-flex justify-content-center">
-                <img src="Platonus_files/login-preview.png" alt="Login image" width="500" data-app-dark-img="images/login-preview.png" data-app-light-img="images/login-preview.png">
+                <img src="Platonus_files/login-preview.png" alt="Login image" width="500" data-app-dark-img="Platonus_files/login-preview.png" data-app-light-img="Platonus_files/login-preview.png">
             </div>
         </div>
         <!-- /Left Text -->
@@ -110,8 +110,8 @@
             <div class="login-container mx-auto">
                 <div class="d-xl-none w-100">
                     <!--<div class="d-flex justify-content-center">
-                        <img src="/images/loginlogo.png" class="img-fluid mb-4" alt="Login logo" data-app-dark-img="/images/loginlogo.png"
-                             data-app-light-img="/images/loginlogo.png">
+                        <img src="Platonus_files/loginlogo.png" class="img-fluid mb-4" alt="Login logo" data-app-dark-img="Platonus_files/loginlogo.png"
+                             data-app-light-img="Platonus_files/loginlogo.png">
                     </div>-->
                 </div>
                 <div class="card">
@@ -121,11 +121,11 @@
                         <div class="d-flex justify-content-end mb-4 me-4" id="specialButtonAddLocation">
 <!--                            <a id="specialButton" href="javascript:void(0)" style="text-align: center; display: block;">Перейти в режим для слабовидящих</a>-->
                         </div>
-                        <h3 class="mb-2 mt-2" id="login_header">Жеке кабинетке кіру</h3>
+                        <h3 class="mb-2 mt-2" id="login_header">Войти в личный кабинет</h3>
 <!--                        <br>-->
                         <p class="mb-3"></p>
 
-                        <select type="language" class="form-control mb-3" name="language" id="language" onchange="onLanguageSelect()"><option value="1">Русский</option><option value="2" selected="selected">Қазақша</option><option value="3">English</option></select>
+                        <select type="language" class="form-control mb-3" name="language" id="language" onchange="onLanguageSelect()"><option value="1" selected="selected">Русский</option><option value="2">Қазақша</option><option value="3">English</option></select>
 <div class="mb-3" id="login_type"> 
     <label class="form-label" id="login_label">Логин</label>
     <input class="form-control" type="text" name="login" required="" id="login_input" placeholder="Логин" value="">
@@ -133,12 +133,12 @@
 
 <div class="mb-3 form-password-toggle">
    <div class="d-flex justify-content-between">
-       <label class="form-label" for="password" id="password_label">Құпия сөз</label>
-       <a id="forgot_your_password" href="https://platonus.iitu.edu.kz/forget.html?language=1">Құпия сөзіңізді ұмыттыңыз ба?</a>
+       <label class="form-label" for="password" id="password_label">Пароль</label>
+       <a id="forgot_your_password" href="https://platonus.iitu.edu.kz/forget.html?language=1">Забыли пароль?</a>
    </div>
    <div class="input-group input-group-merge">
-       <input type="password" class="form-control" required="" name="password" id="password" placeholder="Құпия сөз" aria-describedby="password">
-       <span class="input-group-text cursor-pointer"><i class="bx bx-hide" id="pass-status" onclick="viewPassword()"></i></span>
+       <input type="password" class="form-control" required="" name="password" id="password" placeholder="Пароль" aria-describedby="password">
+       <span class="input-group-text cursor-pointer"><i class="bx bx-show-alt" id="pass-status" onclick="viewPassword()"></i></span>
    </div>
 </div>
 
@@ -170,16 +170,16 @@ TQIDAQAB
     }
 </script>
 
-<button type="button" onclick="submitForm()" id="Submit1" class="btn btn-primary d-grid w-100">Кіру</button>ж
+<button type="button" onclick="submitForm()" id="Submit1" class="btn btn-primary d-grid w-100">Войти</button>
  <div class="divider my-4">
- <div class="divider-text" id="login_divider_text">Қосымша</div>
- </div> <div class="col-xs-12" id="applicant_registration"><a style="text-align:center;display:block;" href="https://platonus.iitu.edu.kz/registration.html">Талапкерлерді тіркеу</a></div>
+ <div class="divider-text" id="login_divider_text">Дополнительно</div>
+ </div> <div class="col-xs-12" id="applicant_registration"><a style="text-align:center;display:block;" href="https://platonus.iitu.edu.kz/registration.html">Регистрация абитуриентов</a></div>
 
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center flex-column mt-3">
-                <div class="d-flex align-items-center justify-content-center mb-3" id="install-mobile-title">Мобильді қосымшаны орнатыңыз</div>
+                <div class="d-flex align-items-center justify-content-center mb-3" id="install-mobile-title">Установите мобильное приложение</div>
                 <div class="d-flex align-items-center justify-content-between gap-2">
                     
                 </div>
